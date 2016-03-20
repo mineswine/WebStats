@@ -1,10 +1,16 @@
+@font-face {
+    font-family: Proxima;
+    src: url('/font/proxima/ProximaNova-Regular.otf');
+}
+
 body, html {
+  font-family: Proxima;
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-#wrapper {
+.wrapper {
   height: 100%;
 }
 
@@ -12,11 +18,12 @@ body, html {
 
 #page-content-wrapper {
   width: 80%;
-  height: 100vh;
-  float: right;
-  background: url('/images/background.jpg');
-  background-size: cover;
+  float: left;
   position: relative;
+  background-image: url('/images/background.jpg');
+  background-size: contain;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #content-overlay {
@@ -26,14 +33,22 @@ body, html {
   background: rgba(0, 0, 0, 0.25);
 }
 
+.content-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* @@@@@@@@ - SIDEBAR - @@@@@@@@ */
 
 #sidebar-wrapper {
   width: 20%;
   height: 100vh;
   background: linear-gradient(rgb(177, 160, 160), rgb(101, 92, 92));
-  border-right: 2px solid rgb(97, 80, 80);
+  /*border-right: 1px solid rgb(214, 195, 195);*/
   float: left;
+  z-index: 10;
+  position: relative;
+  box-shadow: 2px 0 3px rgba(68, 68, 68, 0.84);
 }
 
 .sidebar-logo {
@@ -95,3 +110,116 @@ body, html {
 .gm-btn {
   width: 100% !important;
 }
+
+/* @@@@@@@@ - LEADERBOARDS - @@@@@@@@ */
+
+#upper-content {
+  padding-bottom: 40px;
+  color: white;
+  background: radial-gradient(rgba(15, 15, 15, 0.14), rgba(3, 3, 3, 0.35));
+}
+
+.leaderboard-name {
+  padding-top: 20px;
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.leaderboard-stats {
+  opacity: 0.9;
+  color: black;
+  margin-top: 10px;
+}
+
+.leaderboard-stats th {
+  text-transform: uppercase;
+}
+
+.leaderboard-stats thead {
+  background: rgb(251, 232, 59);
+  color: black;
+}
+
+.leaderboard-stats tbody tr {
+  background: rgb(236, 236, 236);
+}
+
+.leaderboard-image img {
+  width: 100%;
+  position: relative;
+}
+
+.leaderboard-image {
+  overflow: hidden;
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 3px 5px rgba(68, 68, 68, 0.9);
+  border: 4px solid rgb(251, 203, 59);
+  border-radius: 20px;
+  position: relative;
+}
+
+/*rgb(19, 64, 96)*/
+.after {
+  /*background: radial-gradient(rgba(15, 15, 15, 0.14), rgba(3, 3, 3, 0.35));*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  box-shadow: inset 0px 0px 6px 3px rgba(0, 0, 0, 0.35);
+  border-radius: 13px;
+}
+
+.leaderboard-nav {
+  position: relative;
+}
+
+.leaderboad-aggregation {
+  margin-top: 15px;
+}
+
+.leaderboard-sort {
+  width: 20%;
+  float: left;
+  margin-right: 30px;
+}
+
+.pull-middle {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.leaderboard-total {
+  text-align: center;
+}
+
+.playerhead-table {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.playername-table {
+  padding-left: 8px;
+  font-weight: bold;
+  color: rgb(19, 64, 96);
+  text-shadow: 1px 1px 0px rgba(14, 14, 14, 0.2);
+}
+
+#bottom-content {
+  border-top: 1px solid rgba(242, 242, 242, 0.9);
+  z-index: 1;
+  background: rgba(236, 236, 236, 0.9);
+  height: 100%;
+}
+
+
+/* @@@@@@@@ - PROFILE - @@@@@@@@ */
