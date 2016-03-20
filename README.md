@@ -1,4 +1,4 @@
-# React / Webpack / Express & Node - BOILERPLATE
+# MineSwine Stats System
 
 
-Simply 'npm install' to get started.
+![Image](https://i.gyazo.com/06099cacbd13eb992f1c62495712d908.png)
