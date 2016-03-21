@@ -5,6 +5,8 @@ import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
 // Load Routes
 import Index from './routes/index/init';
+import Leaderboard from './routes/leaderboard/init';
+import Profile from './routes/profile/init';
 
 // Load socket.io connector
 import socket from './socket';
@@ -12,8 +14,9 @@ import socket from './socket';
 // Routing Setup
 render((
   <Router history={browserHistory} >
-    <Route path='/'>
-      <IndexRoute socket={socket} component={Index}/>
+    <Route path='/' socket={socket} component={Index}>
+      <Route path='stats/:gamemode' component={Leaderboard}/>
+      <Route path='profile/:playername' component={Profile}/>
     </Route>
   </Router>
 ),

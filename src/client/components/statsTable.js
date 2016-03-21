@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class StatsTable extends React.Component {
   constructor(props) {
@@ -51,8 +52,10 @@ const TableRow = ({rowData}) => {
     if (key.toLowerCase() === 'playername') {
       return (
         <td>
-          <img className='playerhead-table' src={'https://mcapi.ca/avatar/2d/' + rowData[key] + '/20'}/>
-          <span className='playername-table'>{rowData[key]}</span>
+          <Link to={'/profile/' + rowData[key]}>
+            <img className='playerhead-table' src={'https://mcapi.ca/avatar/2d/' + rowData[key] + '/20'}/>
+            <span className='playername-table'>{rowData[key]}</span>
+          </Link>
         </td>
       )
     }
