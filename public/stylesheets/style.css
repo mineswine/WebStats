@@ -12,7 +12,6 @@ body, html {
 
 #root {
   height: 100%;
-  overflow: hidden;
 }
 
 .wrapper {
@@ -21,7 +20,6 @@ body, html {
 
 
 /* @@@@@@@@ - PAGE CONTENT - @@@@@@@@ */
-
 #page-content-wrapper {
   width: 80%;
   float: left;
@@ -131,6 +129,13 @@ body, html {
   padding-bottom: 40px;
   color: white;
   background: radial-gradient(rgba(15, 15, 15, 0.14), rgba(3, 3, 3, 0.35));
+  height: 35%;
+}
+
+#bottom-content {
+  border-top: 1px solid rgba(242, 242, 242, 0.9);
+  z-index: 1;
+  background: rgba(236, 236, 236, 0.9);
 }
 
 .leaderboard-name {
@@ -162,10 +167,10 @@ body, html {
 .leaderboard-image img {
   width: 100%;
   position: relative;
+  border-radius: 16px;
 }
 
 .leaderboard-image {
-  overflow: hidden;
   width: 40%;
   display: block;
   margin: 0 auto;
@@ -190,6 +195,7 @@ body, html {
 
 .leaderboard-nav {
   position: relative;
+  padding-bottom: 100px;
 }
 
 .leaderboad-aggregation {
@@ -230,13 +236,6 @@ body, html {
 
 .playername-table:hover {
   text-decoration: underline;
-}
-
-#bottom-content {
-  border-top: 1px solid rgba(242, 242, 242, 0.9);
-  z-index: 1;
-  background: rgba(236, 236, 236, 0.9);
-  height: 100%;
 }
 
 
