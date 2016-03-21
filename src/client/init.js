@@ -15,7 +15,7 @@ import socket from './socket';
 render((
   <Router history={browserHistory} >
     <Route path='/' socket={socket} component={Index}>
-      <Route path='stats/:gamemode' component={Leaderboard}/>
+      <Route path='leaderboard/:gamemode' component={Leaderboard}/>
       <Route path='profile/:playername' component={Profile}/>
     </Route>
   </Router>

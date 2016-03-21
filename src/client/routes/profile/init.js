@@ -2,6 +2,7 @@ import React from 'react';
 
 const Profile = ({}) => {
   return (
+    <div>
     <div className='wrapper'>
       <div id='upper-content-profile'>
         <div className='profile-header'>
@@ -17,8 +18,9 @@ const Profile = ({}) => {
           </div>
         </div>
       </div>
-      <div id='bottom-content-profile'>
-        <div className='profile-content'>
+    </div>
+    <div id='bottom-content-profile'>
+      <div className='profile-content'>
           <div className='gamemode-box'>
             <div className='gamemode-name'>
               Survival Games with Guns

@@ -10,20 +10,25 @@ body, html {
   height: 100%;
 }
 
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
 .wrapper {
   height: 100%;
 }
+
 
 /* @@@@@@@@ - PAGE CONTENT - @@@@@@@@ */
 
 #page-content-wrapper {
   width: 80%;
   float: left;
-  position: relative;
   background-image: url('/images/background.jpg');
   background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  overflow: scroll;
 }
 
 #content-overlay {
@@ -42,7 +47,7 @@ body, html {
 
 #sidebar-wrapper {
   width: 20%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(rgb(177, 160, 160), rgb(101, 92, 92));
   /*border-right: 1px solid rgb(214, 195, 195);*/
   float: left;
@@ -80,6 +85,15 @@ body, html {
   position: relative;
   width: 80%;
   margin: 10px auto;
+}
+
+#search-msg {
+  padding-top: 3px;
+  text-align: center;
+  color: rgb(237, 117, 130);
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgb(48, 48, 48);
+  display: none;
 }
 
 #player_search {
@@ -249,8 +263,6 @@ body, html {
 }
 
 .profile-player {
-  padding-top: 10px;
-  padding-bottom: 10px;
   width: 30%;
   background: rgba(94, 172, 244, 0.8);
   border-radius: 40px;
@@ -350,6 +362,7 @@ body, html {
 
 
 #upper-content-profile {
+  overflow: hidden;
 }
 
 #bottom-content-profile {
