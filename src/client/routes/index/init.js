@@ -131,56 +131,35 @@ const Profile = ({}) => {
   return (
     <div className='wrapper'>
       <div id='upper-content'>
-        <div className='content-wrap'>
-            <div className='container-fluid'>
-              <div className='row'>
-                <div className='col-md-12'>
-                  <div className='leaderboard-name'>
-                    Survival Games with Guns
-                  </div>
-                  <div className='leaderboard-image'>
-                    <img src='/images/sgrl.png'/>
-                    <div className='after'></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className='profile-image'>
+          <img src='https://crafatar.com/renders/body/insanehero?overlay'/>
         </div>
       </div>
       <div id='bottom-content'>
-        <div className='content-wrap'>
-          <div className='row'>
-            <div className='leaderboad-aggregation'>
-              <div className='leaderboard-sort'>
-                <label>Sort by Date:</label>
-                <select className='form-control'>
-                  <option>Last Week</option>
-                </select>
-              </div>
-              <div className='leaderboard-sort'>
-                <label>Sort by Stat:</label>
-                <select className='form-control'>
-                  <option>Kills</option>
-                </select>
-              </div>
-            </div>
+        <div className='gamemode-stats'>
+          <div className='gamemode-name'>
+            Survival Games with Guns
           </div>
-          <div className='row'>
-            <div className='leaderboard-stats'>
-              <StatsTable data={fake}/>
+          <div className='profile-stats'>
+            <div className='profile-stat-box'>
+              <i className="stat-icon fa fa-bullseye"></i>
+              <div className='profile-stat'>Kills</div>
+              <div className='stat-value'>420</div>
             </div>
-          </div>
-          <div className='row'>
-            <div className='leaderboard-nav'>
-              <div className='pull-middle leaderboard-total'>
-                Total Players: 27001
-              </div>
-              <div className='pull-left btn btn-primary'>
-                Previous Page
-              </div>
-              <div className='pull-right btn btn-primary'>
-                Next Page
-              </div>
+            <div className='profile-stat-box'>
+              <i className="stat-icon fa fa-heartbeat"></i>
+              <div className='profile-stat'>Deaths</div>
+              <div className='stat-value'>327</div>
+            </div>
+            <div className='profile-stat-box'>
+              <i className="stat-icon fa fa-bolt"></i>
+              <div className='profile-stat'>Headshots</div>
+              <div className='stat-value'>24</div>
+            </div>
+            <div className='profile-stat-box'>
+              <i className="stat-icon fa fa-star"></i>
+              <div className='profile-stat'>Wins</div>
+              <div className='stat-value'>18</div>
             </div>
           </div>
         </div>
