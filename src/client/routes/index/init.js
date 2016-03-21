@@ -91,7 +91,7 @@ const Sidebar = ({}) => {
   return (
     <div id='sidebar-wrapper'>
       <div className='sidebar-logo'>
-        <img src='/images/logo.png'/>
+        <a href='http://mineswine.com'><img src='/images/logo.png'/></a>
       </div>
       <div className='sidebar-divider'>
         <div className='divider-wrapper'>
@@ -110,8 +110,8 @@ const Sidebar = ({}) => {
             Leaderboards
           </div>
           <ul className='sidebar-gamemodes'>
-            <li><button className='btn btn-primary gm-btn'>Survival Games with Guns</button></li>
-            <li><button className='btn btn-primary gm-btn' disabled>Jedicraft</button></li>
+            <li><button className='btn btn-info gm-btn'>Survival Games with Guns</button></li>
+            <li><button className='btn btn-info gm-btn' disabled>Jedicraft</button></li>
           </ul>
         </div>
       </div>
@@ -130,36 +130,74 @@ const PageBody = ({}) => {
 const Profile = ({}) => {
   return (
     <div className='wrapper'>
-      <div id='upper-content'>
-        <div className='profile-image'>
-          <img src='https://crafatar.com/renders/body/insanehero?overlay'/>
+      <div id='upper-content-profile'>
+        <div className='profile-header'>
+          <div className='profile-player'>
+            <div className='profile-wrap'>
+              <div className='profile-image'>
+                <img src='https://crafatar.com/renders/body/insanehero?overlay&scale=3'/>
+              </div>
+              <div className='profile-playername'>
+                insanehero
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div id='bottom-content'>
-        <div className='gamemode-stats'>
-          <div className='gamemode-name'>
-            Survival Games with Guns
+      <div id='bottom-content-profile'>
+        <div className='profile-content'>
+          <div className='gamemode-box'>
+            <div className='gamemode-name'>
+              Survival Games with Guns
+            </div>
+            <div className='gamemode-stats'>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-bullseye"></i>
+                <div className='gamemode-stat'>Kills</div>
+                <div className='stat-value'>420</div>
+              </div>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-heartbeat"></i>
+                <div className='gamemode-stat'>Deaths</div>
+                <div className='stat-value'>327</div>
+              </div>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-bolt"></i>
+                <div className='gamemode-stat'>Headshots</div>
+                <div className='stat-value'>24</div>
+              </div>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-star"></i>
+                <div className='gamemode-stat'>Wins</div>
+                <div className='stat-value'>18</div>
+              </div>
+            </div>
           </div>
-          <div className='profile-stats'>
-            <div className='profile-stat-box'>
-              <i className="stat-icon fa fa-bullseye"></i>
-              <div className='profile-stat'>Kills</div>
-              <div className='stat-value'>420</div>
+          <div className='gamemode-box'>
+            <div className='gamemode-name'>
+              Survival Games with Guns
             </div>
-            <div className='profile-stat-box'>
-              <i className="stat-icon fa fa-heartbeat"></i>
-              <div className='profile-stat'>Deaths</div>
-              <div className='stat-value'>327</div>
-            </div>
-            <div className='profile-stat-box'>
-              <i className="stat-icon fa fa-bolt"></i>
-              <div className='profile-stat'>Headshots</div>
-              <div className='stat-value'>24</div>
-            </div>
-            <div className='profile-stat-box'>
-              <i className="stat-icon fa fa-star"></i>
-              <div className='profile-stat'>Wins</div>
-              <div className='stat-value'>18</div>
+            <div className='gamemode-stats'>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-bullseye"></i>
+                <div className='gamemode-stat'>Kills</div>
+                <div className='stat-value'>420</div>
+              </div>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-heartbeat"></i>
+                <div className='gamemode-stat'>Deaths</div>
+                <div className='stat-value'>327</div>
+              </div>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-bolt"></i>
+                <div className='gamemode-stat'>Headshots</div>
+                <div className='stat-value'>24</div>
+              </div>
+              <div className='gamemode-stat-box'>
+                <i className="stat-icon fa fa-star"></i>
+                <div className='gamemode-stat'>Wins</div>
+                <div className='stat-value'>18</div>
+              </div>
             </div>
           </div>
         </div>
