@@ -10,7 +10,7 @@ class Index extends React.Component {
     this.state = {};
   }
   componentDidMount() {
-    this.socket.emit('tester', 'beep');
+    this.socket.emit('tes', 'beep');
     this.socket.on('chat', function(data) {
       console.log(data);
     });
