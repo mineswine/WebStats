@@ -9,13 +9,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var webpack = require("webpack");
-var io = require('socket.io')();
 var app = express();
 
 
 // Load server routes
 var index = require('./src/server/routes/index');
-
+var sockets = require('./src/server/sockets/api');
 
 // Load Webpack config
 var packConfig = require('./webpack.config');
@@ -84,17 +83,6 @@ app.use(function(err, req, res, next) {
 
 // Start up sockets
 
-io.on('connection', function(socket) {
-  socket.on('tester', function(data) {
-  });
-
-  socket.emit('chat', 'weepo');
-  socket.on('disconnect', function() {
-
-  });
-});
-
-io.listen(3001);
 
 
 

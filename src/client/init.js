@@ -14,8 +14,8 @@ import socket from './socket';
 // Routing Setup
 render((
   <Router history={browserHistory} >
-    <Route path='/' socket={socket} component={Index}>
-      <Route path='leaderboard/:gamemode' component={Leaderboard}/>
+    <Route path='/' component={Index}>
+      <Route path='leaderboard/:gamemode' socket={socket} component={Leaderboard}/>
       <Route path='profile/:playername' component={Profile}/>
     </Route>
   </Router>

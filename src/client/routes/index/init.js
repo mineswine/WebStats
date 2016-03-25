@@ -6,14 +6,9 @@ import Sidebar from './resources/sidebar';
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.socket = this.props.route.socket;
     this.state = {};
   }
   componentDidMount() {
-    this.socket.emit('tes', 'beep');
-    this.socket.on('chat', function(data) {
-      console.log(data);
-    });
   }
   render() {
     return (
