@@ -13,8 +13,11 @@ class Index extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <Sidebar />
+        <Sidebar socket={this.props.route.socket}/>
         <div id='page-content-wrapper'>
+          <div id='imfuck'>
+            <img src='/images/background.jpg' />
+          </div>
           {this.props.children}
         </div>
       </div>

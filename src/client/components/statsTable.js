@@ -1,36 +1,19 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 class StatsTable extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { headers: ['player', 'elo', 'kills', 'deaths', 'stepswalked']};
   }
-  componentWillReceiveProps(props) {
-    let calls = props.data.map((row) => {
-      return new Promise(function(resolve, reject) {
-        $.ajax({
-          type: 'GET',
-          url: 'https://us.mc-api.net/v3/name/' + row.uuid.split('-').join(''),
-          dataType:'json',
-          crossDomain: true,
-          success: function(data) {
-            resolve(data)
-          }
-        });
-      });
-    });
-    Promise.all(calls).then(function(values) {
-      values.forEach(function(val) {
-        let player = document.getElementById('player-' + val.full_uuid);
-        player.innerHTML = val.name;
-      });
-    });
+  getChildContext() {
+    return { headers: this.state.headers }
   }
   render() {
     let head = null, body = null;
     if (this.props.data.length > 0) {
-      head = <TableHeader headers={Object.keys(this.props.data[0])} />
+
+      head = <TableHeader headers={this.state.headers} />
       body = <TableBody bodyData={this.props.data} index={this.props.boardIndex}/>
     }
     return (
@@ -40,6 +23,10 @@ class StatsTable extends React.Component {
       </table>
     )
   }
+}
+
+StatsTable.childContextTypes = {
+  headers: PropTypes.array
 }
 
 const TableHeader = ({headers}) => {
@@ -74,15 +61,14 @@ const TableBody = ({bodyData, index}) => {
   )
 }
 
-const TableRow = ({rowData, index}) => {
-  let headers = Object.keys(rowData);
-  let row = headers.map((key, i) => {
-    if (key.toLowerCase() === 'uuid') {
+const TableRow = ({rowData, index}, context) => {
+  let row = context.headers.map((key, i) => {
+    if (key.toLowerCase() === 'player') {
       return (
         <td>
-          <Link to={'/profile/' + rowData[key]}>
-            <img className='playerhead-table' src={'https://crafatar.com/avatars/' + rowData[key] + '?size=20&overlay'}/>
-            <span id={'player-' + rowData[key]} className='playername-table'>{rowData[key]}</span>
+          <Link to={'/profile/' + rowData[key].name}>
+            <img className='playerhead-table' src={'https://crafatar.com/avatars/' + rowData[key].uuid + '?size=20&overlay'}/>
+            <span id={'player-' + rowData[key].uuid} className='playername-table'>{rowData[key].name}</span>
           </Link>
         </td>
       )
@@ -99,6 +85,10 @@ const TableRow = ({rowData, index}) => {
       {row}
     </tr>
   )
+}
+
+TableRow.contextTypes = {
+  headers: PropTypes.array
 }
 
 export default StatsTable;

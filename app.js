@@ -1,5 +1,5 @@
 // Load environment variables
-// require('dotenv').load();
+require('dotenv').load();
 
 // Load dependencies
 var express = require('express');

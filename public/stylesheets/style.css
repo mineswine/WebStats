@@ -10,6 +10,10 @@ body, html {
   height: 100%;
 }
 
+.purple {
+  color: rgb(203, 149, 250);
+}
+
 #root {
   height: 100%;
 }
@@ -23,10 +27,22 @@ body, html {
 #page-content-wrapper {
   width: 80%;
   float: left;
-  background-image: url('/images/background.jpg');
-  background-size: cover;
   height: 100%;
-  overflow: scroll;
+}
+
+#imfuck {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#imfuck img {
+  position: fixed;
+  width: inherit;
+  height: inherit;
 }
 
 #content-overlay {
@@ -46,11 +62,17 @@ body, html {
 #sidebar-wrapper {
   width: 20%;
   height: 100%;
-  background: linear-gradient(rgb(177, 160, 160), rgb(101, 92, 92));
   /*border-right: 1px solid rgb(214, 195, 195);*/
   float: left;
   z-index: 10;
   position: relative;
+}
+
+#sidebar-content-wrapper {
+  height: inherit;
+  width: inherit;
+  background: linear-gradient(rgb(177, 160, 160), rgb(101, 92, 92));
+  position: fixed;
   box-shadow: 2px 0 3px rgba(68, 68, 68, 0.84);
 }
 
@@ -247,6 +269,7 @@ body, html {
 }
 
 .profile-image img {
+  padding-top: 5px;
   margin: 0 auto;
   display: block;
 }
@@ -361,8 +384,8 @@ body, html {
 
 
 #upper-content-profile {
+  overflow: hidden;
 }
 
 #bottom-content-profile {
-  height: 100%;
 }
