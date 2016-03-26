@@ -32,7 +32,7 @@ StatsTable.childContextTypes = {
 const TableHeader = ({headers}) => {
   let theaders = headers.map((header) => {
     return (
-      <th>
+      <th key={header}>
         {header}
       </th>
     )
@@ -51,7 +51,7 @@ const TableBody = ({bodyData, index}) => {
 
   let rows = bodyData.map((row, i) => {
     return (
-        <TableRow rowData={row} index={((i + 1) + index)}/>
+        <TableRow rowData={row} index={((i + 1) + index)} key={i}/>
     )
   });
   return (
@@ -65,7 +65,7 @@ const TableRow = ({rowData, index}, context) => {
   let row = context.headers.map((key, i) => {
     if (key.toLowerCase() === 'player') {
       return (
-        <td>
+        <td key={i}>
           <Link to={'/profile/' + rowData[key].name}>
             <img className='playerhead-table' src={'https://crafatar.com/avatars/' + rowData[key].uuid + '?size=20&overlay'}/>
             <span id={'player-' + rowData[key].uuid} className='playername-table'>{rowData[key].name}</span>
@@ -74,7 +74,7 @@ const TableRow = ({rowData, index}, context) => {
       )
     }
     return (
-      <td>
+      <td key={i}>
         {rowData[key]}
       </td>
     )
